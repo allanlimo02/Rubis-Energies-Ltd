@@ -8,6 +8,24 @@
     <!--    tools:context = ".MainActivity"-->
     <!--    Adding text-->
 <!--    Backrounf Image-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delivery"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/welcometxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="poppins"
+        android:text="@string/welcometxt"
+
+        android:textColor="@color/white"
+
+        android:textSize="30sp" />
 
 
     <Button
@@ -20,7 +38,5 @@
         android:background="#000000"
         android:text="@string/explore"
         android:textColor="#ffffff" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 </RelativeLayout>
