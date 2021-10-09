@@ -20,7 +20,7 @@
             android:layout_marginBottom="30dp"
             android:ems="10"
             android:hint="Input Username"
-            android:hintTextColor="#757575"
+            android:textColorHint="@color/black"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/pasword"
+            android:textColorHint="@color/black"
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:minHeight="48dp" />
