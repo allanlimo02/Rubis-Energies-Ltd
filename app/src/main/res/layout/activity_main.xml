@@ -10,10 +10,13 @@
     <!--    Adding text-->
     <!--    Backrounf Image-->
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/delivery" />
+        android:src="@drawable/delivery"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/Logo" />
 
 
     <TextView
@@ -28,7 +31,6 @@
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="22sp" />
-
     <Button
         android:id="@+id/loginButton"
         android:layout_width="234dp"
@@ -48,5 +50,15 @@
         android:layout_marginBottom="-265dp"
         android:contentDescription="@string/logo_describe"
         app:srcCompat="@drawable/logo" />
+    <TextView
+        android:id="@+id/tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/logo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/copyright"
+        android:textColor="@color/white" />
 
 </RelativeLayout>
