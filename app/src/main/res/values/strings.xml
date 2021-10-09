@@ -4,6 +4,7 @@
         <string name="explore">Explore Restaurants</string>
         <string name="welcometxt">Welcome to Rubis Fast Food. </string>
         <string name="tagLine">We are here for you</string>
+        <string name="copyright">© 2021</string>
         <string name="logo_describe">logo</string>
 
 </resources>
