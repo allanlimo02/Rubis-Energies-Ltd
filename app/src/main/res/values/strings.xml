@@ -10,5 +10,6 @@
     <string name="sign_in_txt">Sign-In</string>
     <string name="username">Username</string>
     <string name="password">Input password</string>
+    <string name="pasword">Input Pasword</string>
 
 </resources>

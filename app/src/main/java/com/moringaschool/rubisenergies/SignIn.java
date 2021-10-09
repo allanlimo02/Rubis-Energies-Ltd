@@ -12,7 +12,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SignIn extends AppCompatActivity {
-    @BindView(R.id.signin) Button mSignIn;
+    @BindView(R.id.submit) Button mSignIn;
     @BindView(R.id.username) EditText mUsername;
     @BindView(R.id.password) EditText mPassword;
     private int counter =3;
@@ -27,25 +27,25 @@ public class SignIn extends AppCompatActivity {
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(mUsername.getText().toString(),mPassword.getText().toString());
-
+//                validate(mUsername.getText().toString(),mPassword.getText().toString());
+                Intent intent= new Intent(SignIn.this,RestaurantsList.class);
+                startActivity(intent);
             }
         });
 
 
 
     }
-    public void validate(String username, String password){
-        if((username.equals("Admin"))&&(password.equals("1234"))){
-            Intent intent= new Intent(SignIn.this,RestaurantsList.class);
-            startActivity(intent);
-        }
-        else {
-            counter--;
-            if(counter==0){
-                mSignIn.setEnabled(false);
-            }
-        }
-
-    }
+//    public void validate(String username, String password){
+//        if((username.equals("Admin"))&&(password.equals("1234"))){
+//
+//        }
+//        else {
+//            counter--;
+//            if(counter==0){
+//                mSignIn.setEnabled(false);
+//            }
+//        }
+//
+//    }
 }

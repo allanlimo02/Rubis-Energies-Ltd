@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Welcome to Rubis Energy! \n Please Log-In to continue", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(MainActivity.this, SignIn.class);
+                Intent intent=new Intent(MainActivity.this, RestaurantsList.class);
                 startActivity(intent);
 
             }
