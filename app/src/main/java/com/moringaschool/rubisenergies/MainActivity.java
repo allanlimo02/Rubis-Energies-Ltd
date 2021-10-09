@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Welcome to Rubis Energy!", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(MainActivity.this, RestaurantsList.class);
+                Toast.makeText(MainActivity.this, "Welcome to Rubis Energy! \n Please Log-In to continue", Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(MainActivity.this, SignIn.class);
                 startActivity(intent);
 
             }
