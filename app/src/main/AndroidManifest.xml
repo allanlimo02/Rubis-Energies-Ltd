@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RubisEnergies">
         <activity
+            android:name=".SignIn"
+            android:exported="true" />
+        <activity
             android:name=".RestaurantsList"
             android:exported="true" />
         <activity

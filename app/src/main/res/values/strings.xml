@@ -1,11 +1,11 @@
 <resources>
-        <string name="app_name">Rubis Fast Foods</string>
-        <string name="log_in">Log In</string>
-        <string name="explore">Explore Restaurants</string>
-        <string name="welcometxt">Welcome to Rubis Fast Food. </string>
-        <string name="tagLine">We are here for you</string>
-        <string name="copyright">© 2021</string>
-        <string name="logo_describe">logo</string>
-        <string name="Logo">Logo</string>
+    <string name="app_name">Rubis Fast Foods</string>
+    <string name="log_in">Log In</string>
+    <string name="explore">Explore Restaurants</string>
+    <string name="welcometxt">Welcome to Rubis Fast Food. </string>
+    <string name="tagLine">We are here for you</string>
+    <string name="copyright">© 2021</string>
+    <string name="logo_describe">logo</string>
+    <string name="Logo">Logo</string>
 
 </resources>
