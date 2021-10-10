@@ -11,5 +11,6 @@
     <string name="username">Username</string>
     <string name="password">Input password</string>
     <string name="pasword">Input Pasword</string>
+    <string name="welcome">Welcome</string>
 
 </resources>
