@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Welcome to Rubis Energy! \n Please Log-In to continue", Toast.LENGTH_LONG).show();
                 Intent intent=new Intent(MainActivity.this, SignIn.class);
                 startActivity(intent);
+
             }
         });
     }
