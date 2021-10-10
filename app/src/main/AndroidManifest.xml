@@ -11,10 +11,19 @@
         android:theme="@style/Theme.RubisEnergies">
         <activity
             android:name=".AllRestaurants"
-            android:exported="true" />
+            android:exported="true" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.rubisenergies.SignIn">
+            </meta-data>
+        </activity>
         <activity
-            android:name=".SignIn"
-            android:exported="true" />
+            android:name=".SignIn">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.moringaschool.rubisenergies.MainActivity">
+        </meta-data>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

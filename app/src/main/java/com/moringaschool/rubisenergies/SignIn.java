@@ -33,7 +33,6 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validate(mUsername.getText().toString(),mPassword.getText().toString());
-
             }
         });
 
@@ -42,10 +41,10 @@ public class SignIn extends AppCompatActivity {
     }
     public void validate(String username, String password){
         if((username.equals("Admin"))&&(password.equals("1234"))){
-            Intent intent= new Intent(SignIn.this,RestaurantsList.class);
+            Intent intent= new Intent(SignIn.this,AllRestaurants.class);
             startActivity(intent);
             String name =mName.getText().toString();
-            intent.putExtra("name",name);
+//            intent.putExtra("name",name);
         }
         else {
             counter--;
