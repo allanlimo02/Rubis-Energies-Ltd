@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RubisEnergies">
         <activity
-            android:name=".AllRestaurants"
+            android:name=".ui.AllRestaurants"
             android:exported="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.rubisenergies.SignIn">
+                android:value="com.moringaschool.rubisenergies.ui.SignIn">
             </meta-data>
         </activity>
         <activity
-            android:name=".SignIn">
+            android:name=".ui.SignIn">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.moringaschool.rubisenergies.MainActivity">
+            android:value="com.moringaschool.rubisenergies.ui.MainActivity">
         </meta-data>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
