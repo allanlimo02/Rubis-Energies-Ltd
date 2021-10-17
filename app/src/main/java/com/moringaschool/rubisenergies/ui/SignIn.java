@@ -1,4 +1,4 @@
-package com.moringaschool.rubisenergies;
+package com.moringaschool.rubisenergies.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.moringaschool.rubisenergies.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,9 +44,10 @@ public class SignIn extends AppCompatActivity {
     public void validate(String username, String password){
         if((username.equals("Admin"))&&(password.equals("1234"))){
             Intent intent= new Intent(SignIn.this,AllRestaurants.class);
-            startActivity(intent);
             String name =mName.getText().toString();
-//            intent.putExtra("name",name);
+            intent.putExtra("name",name);
+            startActivity(intent);
+
         }
         else {
             counter--;

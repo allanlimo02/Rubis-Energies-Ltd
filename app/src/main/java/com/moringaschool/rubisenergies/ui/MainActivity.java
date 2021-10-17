@@ -1,4 +1,4 @@
-package com.moringaschool.rubisenergies;
+package com.moringaschool.rubisenergies.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.moringaschool.rubisenergies.R;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.loginButton) Button mLoginButton;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Welcome to Rubis Energy! \n Please Log-In to continue", Toast.LENGTH_LONG).show();
                 Intent intent=new Intent(MainActivity.this, SignIn.class);
+
                 startActivity(intent);
 
             }
