@@ -1,7 +1,7 @@
 package com.moringaschool.rubisenergies.connection;
 
-import static com.moringaschool.rubisenergies.Contants.RAPIDAPI_KEY;
-import static com.moringaschool.rubisenergies.Contants.baseUrl;
+import static com.moringaschool.rubisenergies.Constants.RAPIDAPI_KEY;
+import static com.moringaschool.rubisenergies.Constants.baseUrl;
 
 import java.io.IOException;
 
