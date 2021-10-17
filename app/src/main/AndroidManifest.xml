@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.rubisenergies">
-<!--     Requesting INternet permission-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Requesting INternet permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,19 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RubisEnergies">
         <activity
-            android:name=".ui.AllRestaurants"
-            android:exported="true" >
+            android:name=".ui.SearchFood"
+            android:exported="true" />
+        <activity
+            android:name=".ui.AllMeals"
+            android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.rubisenergies.ui.SignIn">
-            </meta-data>
+                android:value="com.moringaschool.rubisenergies.ui.SignIn"></meta-data>
         </activity>
-        <activity
-            android:name=".ui.SignIn">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.moringaschool.rubisenergies.ui.MainActivity">
-        </meta-data>
+        <activity android:name=".ui.SignIn">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.rubisenergies.ui.MainActivity"></meta-data>
         </activity>
         <activity
             android:name=".ui.MainActivity"

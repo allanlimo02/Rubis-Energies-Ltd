@@ -37,13 +37,10 @@ public class SignIn extends AppCompatActivity {
                 validate(mUsername.getText().toString(),mPassword.getText().toString());
             }
         });
-
-
-
     }
     public void validate(String username, String password){
         if((username.equals("Admin"))&&(password.equals("1234"))){
-            Intent intent= new Intent(SignIn.this,AllRestaurants.class);
+            Intent intent= new Intent(SignIn.this, SearchFood.class);
             String name =ingr.getText().toString();
             intent.putExtra("name",name);
             startActivity(intent);
