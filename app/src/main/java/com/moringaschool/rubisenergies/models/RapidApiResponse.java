@@ -7,20 +7,20 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("jsonschema2pojo")
-public class RubisEnergies {
+public class RapidApiResponse {
 
     @SerializedName("food")
     @Expose
-    private com.moringaschool.rubisenergies.models.Food food;
+    private Food food;
     @SerializedName("measures")
     @Expose
-    private List<com.moringaschool.rubisenergies.models.Measure> measures = null;
+    private List<Measure> measures = null;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public RubisEnergies() {
+    public RapidApiResponse() {
     }
 
     /**
@@ -28,25 +28,25 @@ public class RubisEnergies {
      * @param measures
      * @param food
      */
-    public RubisEnergies(com.moringaschool.rubisenergies.models.Food food, List<com.moringaschool.rubisenergies.models.Measure> measures) {
+    public RapidApiResponse(Food food, List<Measure> measures) {
         super();
         this.food = food;
         this.measures = measures;
     }
 
-    public com.moringaschool.rubisenergies.models.Food getFood() {
+    public Food getFood() {
         return food;
     }
 
-    public void setFood(com.moringaschool.rubisenergies.models.Food food) {
+    public void setFood(Food food) {
         this.food = food;
     }
 
-    public List<com.moringaschool.rubisenergies.models.Measure> getMeasures() {
+    public List<Measure> getMeasures() {
         return measures;
     }
 
-    public void setMeasures(List<com.moringaschool.rubisenergies.models.Measure> measures) {
+    public void setMeasures(List<Measure> measures) {
         this.measures = measures;
     }
 
@@ -63,10 +63,10 @@ public class RubisEnergies {
         if (other == this) {
             return true;
         }
-        if ((other instanceof RubisEnergies) == false) {
+        if ((other instanceof RapidApiResponse) == false) {
             return false;
         }
-        RubisEnergies rhs = ((RubisEnergies) other);
+        RapidApiResponse rhs = ((RapidApiResponse) other);
         return (((this.food == rhs.food)||((this.food!= null)&&this.food.equals(rhs.food)))&&((this.measures == rhs.measures)||((this.measures!= null)&&this.measures.equals(rhs.measures))));
     }
 
