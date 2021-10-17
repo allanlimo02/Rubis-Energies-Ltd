@@ -1,3 +1,4 @@
+
 package com.moringaschool.rubisenergies.models;
 
 import javax.annotation.Generated;
@@ -19,7 +20,7 @@ public class Food {
     private String label;
     @SerializedName("nutrients")
     @Expose
-    private com.moringaschool.rubisenergies.models.Nutrients nutrients;
+    private Nutrients nutrients;
     @SerializedName("category")
     @Expose
     private String category;
@@ -47,7 +48,7 @@ public class Food {
      * @param uri
      * @param nutrients
      */
-    public Food(String foodId, String uri, String label, com.moringaschool.rubisenergies.models.Nutrients nutrients, String category, String categoryLabel, String image) {
+    public Food(String foodId, String uri, String label, Nutrients nutrients, String category, String categoryLabel, String image) {
         super();
         this.foodId = foodId;
         this.uri = uri;
@@ -82,7 +83,7 @@ public class Food {
         this.label = label;
     }
 
-    public com.moringaschool.rubisenergies.models.Nutrients getNutrients() {
+    public Nutrients getNutrients() {
         return nutrients;
     }
 

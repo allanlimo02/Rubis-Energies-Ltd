@@ -1,9 +1,11 @@
+
 package com.moringaschool.rubisenergies.models;
 
 import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.moringaschool.rubisenergies.models.Qualified;
 
 @Generated("jsonschema2pojo")
 public class Measure {
@@ -16,7 +18,7 @@ public class Measure {
     private String label;
     @SerializedName("qualified")
     @Expose
-    private List<List<com.moringaschool.rubisenergies.models.Qualified>> qualified = null;
+    private List<List<Qualified>> qualified = null;
 
     /**
      * No args constructor for use in serialization
@@ -31,7 +33,7 @@ public class Measure {
      * @param label
      * @param uri
      */
-    public Measure(String uri, String label, List<List<com.moringaschool.rubisenergies.models.Qualified>> qualified) {
+    public Measure(String uri, String label, List<List<Qualified>> qualified) {
         super();
         this.uri = uri;
         this.label = label;
@@ -54,11 +56,11 @@ public class Measure {
         this.label = label;
     }
 
-    public List<List<com.moringaschool.rubisenergies.models.Qualified>> getQualified() {
+    public List<List<Qualified>> getQualified() {
         return qualified;
     }
 
-    public void setQualified(List<List<com.moringaschool.rubisenergies.models.Qualified>> qualified) {
+    public void setQualified(List<List<Qualified>> qualified) {
         this.qualified = qualified;
     }
 

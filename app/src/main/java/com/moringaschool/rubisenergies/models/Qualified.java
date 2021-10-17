@@ -1,3 +1,4 @@
+
 package com.moringaschool.rubisenergies.models;
 
 import javax.annotation.Generated;
