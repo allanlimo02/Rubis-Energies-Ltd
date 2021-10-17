@@ -19,7 +19,7 @@ public class SignIn extends AppCompatActivity {
     @BindView(R.id.username) EditText mUsername;
     @BindView(R.id.password) EditText mPassword;
     @BindView(R.id.trials) TextView attempts;
-    @BindView(R.id.name) EditText mName;
+    @BindView(R.id.ingr) EditText ingr;
     @BindView(R.id.invalids) TextView mInvalids;
     @BindView(R.id.blankname) TextView mBlankname;
     private int counter =3;
@@ -44,7 +44,7 @@ public class SignIn extends AppCompatActivity {
     public void validate(String username, String password){
         if((username.equals("Admin"))&&(password.equals("1234"))){
             Intent intent= new Intent(SignIn.this,AllRestaurants.class);
-            String name =mName.getText().toString();
+            String name =ingr.getText().toString();
             intent.putExtra("name",name);
             startActivity(intent);
 
