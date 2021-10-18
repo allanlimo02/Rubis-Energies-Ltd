@@ -29,7 +29,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes.each {
-        it.buildConfigField 'String', 'RAPIDAPI_KEY', Rapidapi_Key
+        it.buildConfigField 'String', 'RAPIDAPI_KEY', rapidapi_key
     }
 }
 

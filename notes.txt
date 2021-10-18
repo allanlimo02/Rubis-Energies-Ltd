@@ -1,0 +1,8 @@
+Food Class:
+-food ID
+-Uri
+-label
+-Nutrients
+-category
+-categoryLabel
+-image

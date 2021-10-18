@@ -15,7 +15,7 @@ public class FoodAdapter extends ArrayAdapter {
     @Override
     public Object getItem(int position) {
         String food = foods[position];
-        return String.format("%s Has great: %s", foods);
+        return String.format("%s Has great: %s", "foods");
     }
 
     @Override
