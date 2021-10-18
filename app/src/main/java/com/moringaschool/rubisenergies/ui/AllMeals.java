@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.moringaschool.rubisenergies.BuildConfig;
 import com.moringaschool.rubisenergies.R;
 import com.moringaschool.rubisenergies.connection.RapidApi;
 import com.moringaschool.rubisenergies.connection.RapidClient;
@@ -35,41 +36,40 @@ public class AllMeals extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_restaurants);
+        setContentView(R.layout.activity_all_meals);
         ButterKnife.bind(this);
         Intent intent=getIntent();
-        String food=intent.getStringExtra("name" );
+        String food_search=intent.getStringExtra("foodsearch");
 
+        //parsing user input to api endpoints
         RapidApi client= RapidClient.getClient();
-        Call<RapidApiResponse> call=client.getRubisEnergies(food);
+        Call<RapidApiResponse> call=client.getRubisEnergies(food_search, BuildConfig.RAPIDAPI_KEY);
+
 
         call.enqueue(new Callback<RapidApiResponse>() {
             @Override
             public void onResponse(Call<RapidApiResponse> call, Response<RapidApiResponse> response) {
+
                 if(response.isSuccessful()){
                     hideProgressBar();
-                    mErrorTextView.setText("Your api was succsessfu;;");
-                    List<Food>foodList= (List<Food>) response.body().getFood();
-                    String[] foods=new String[foodList.size()];
-//                    String [] measures=new String[foodList.size()];
+                    showFailureMessage();
 
-                    for(int i=0;i<foods.length;i++){
-                        foods[i]=foodList.get(i).getLabel();
-                    }
-//                    for(int i=0;i<measures.length;i++){
-//                        Measure measure=foodList.get(i).getNutrients().get(0);
-//                        measures[i]=measure.getUri();
-//                    }
-                    ArrayAdapter arrayAdapter=new FoodAdapter(AllMeals.this,android.R.layout.simple_list_item_1,foods);
-                    allRest.setAdapter(arrayAdapter);
+
+
+//                    ArrayAdapter arrayAdapter=new FoodAdapter(AllMeals.this,android.R.layout.simple_list_item_1,foods);
+//                    allRest.setAdapter(arrayAdapter);
+                }else{
+                    hideProgressBar();
+//                    showFailureMessage();
+                    mErrorTextView.setText("Your %food_search% api was succsessfu;;");
+
                 }
             }
 
             @Override
             public void onFailure(Call<RapidApiResponse> call, Throwable t) {
                 hideProgressBar();
-                showFailureMessage();
-
+                mErrorTextView.setText("Your api was succsessfu;;");
             }
         });
     }
