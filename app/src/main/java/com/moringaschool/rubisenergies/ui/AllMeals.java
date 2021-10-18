@@ -10,12 +10,12 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.moringaschool.rubisenergies.BuildConfig;
 import com.moringaschool.rubisenergies.R;
-import com.moringaschool.rubisenergies.connection.RapidApi;
+import com.moringaschool.rubisenergies.connection.YelpApi;
 import com.moringaschool.rubisenergies.connection.RapidClient;
-import com.moringaschool.rubisenergies.models.Food;
-import com.moringaschool.rubisenergies.models.RapidApiResponse;
+import com.moringaschool.rubisenergies.models.Event;
+import com.moringaschool.rubisenergies.models.YelpEventSearchResponse;
+
 
 import java.util.List;
 
@@ -39,37 +39,43 @@ public class AllMeals extends AppCompatActivity {
         setContentView(R.layout.activity_all_meals);
         ButterKnife.bind(this);
         Intent intent=getIntent();
-        String food_search=intent.getStringExtra("foodsearch");
+        String event_search=intent.getStringExtra("foodsearch");
 
         //parsing user input to api endpoints
-        RapidApi client= RapidClient.getClient();
-        Call<RapidApiResponse> call=client.getRubisEnergies(food_search, BuildConfig.RAPIDAPI_KEY);
+        YelpApi client = RapidClient.getClient();
+        Call<YelpEventSearchResponse> call=client.getRubisEnergies(event_search);
 
-
-        call.enqueue(new Callback<RapidApiResponse>() {
+        call.enqueue(new Callback<YelpEventSearchResponse>() {
             @Override
-            public void onResponse(Call<RapidApiResponse> call, Response<RapidApiResponse> response) {
+            public void onResponse(Call<YelpEventSearchResponse> call, Response<YelpEventSearchResponse> response) {
 
                 if(response.isSuccessful()){
                     hideProgressBar();
-                    showFailureMessage();
+                    List<Event> eventsList=response.body().getEvents();
+                    String[]event=new String[eventsList.size()];
+                    String[] eventLocation=new String[eventsList.size()];
+
+                    for (int i=0;i<event.length;i++){
+                        event[i]=eventsList.get(i).getName();
+//                        String description=eventsList.get(i).getDescription();
+//                        String url=eventsList.get(i).getEventSiteUrl();
+                    }
 
 
-
-//                    ArrayAdapter arrayAdapter=new FoodAdapter(AllMeals.this,android.R.layout.simple_list_item_1,foods);
-//                    allRest.setAdapter(arrayAdapter);
+                    ArrayAdapter arrayAdapter=new FoodAdapter(AllMeals.this,android.R.layout.simple_list_item_1,event);
+                    allRest.setAdapter(arrayAdapter);
                 }else{
                     hideProgressBar();
-//                    showFailureMessage();
-                    mErrorTextView.setText("Your %food_search% api was succsessfu;;");
+                    showFailureMessage();
+
 
                 }
             }
 
             @Override
-            public void onFailure(Call<RapidApiResponse> call, Throwable t) {
+            public void onFailure(Call<YelpEventSearchResponse> call, Throwable t) {
                 hideProgressBar();
-                mErrorTextView.setText("Your api was succsessfu;;");
+                showUnsuccessfulMessage();
             }
         });
     }

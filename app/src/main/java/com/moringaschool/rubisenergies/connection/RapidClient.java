@@ -1,6 +1,6 @@
 package com.moringaschool.rubisenergies.connection;
 
-import static com.moringaschool.rubisenergies.Constants.RAPIDAPI_KEY;
+import static com.moringaschool.rubisenergies.Constants.YelpApiKey;
 import static com.moringaschool.rubisenergies.Constants.baseUrl;
 
 import androidx.annotation.NonNull;
@@ -18,14 +18,14 @@ public class RapidClient {
     private static Retrofit retrofit = null;
 
     //retrofit get method
-    public static RapidApi getClient(){
+    public static YelpApi getClient(){
         if(retrofit==null){
             OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
                 @NonNull
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request request= chain.request().newBuilder()
-                            .addHeader("rapidapi-key",RAPIDAPI_KEY)
+                            .addHeader("YelpApiKey",YelpApiKey)
                             .build();
                     return chain.proceed(request);
                 }
@@ -36,7 +36,7 @@ public class RapidClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-        return retrofit.create(RapidApi.class);
+        return retrofit.create(YelpApi.class);
     }
 
 
