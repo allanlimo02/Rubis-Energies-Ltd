@@ -27,7 +27,11 @@ public class SearchFood extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intentReceive=getIntent();
+                String userName=intentReceive.getStringExtra("name");
                 String foodsearch=food_search.getText().toString();
+
+
                 if(foodsearch.length()==0){
                     error.setText("This field cannot be blank");
                 }else {
