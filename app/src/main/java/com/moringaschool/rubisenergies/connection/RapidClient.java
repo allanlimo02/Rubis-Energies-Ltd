@@ -3,6 +3,8 @@ package com.moringaschool.rubisenergies.connection;
 import static com.moringaschool.rubisenergies.Constants.RAPIDAPI_KEY;
 import static com.moringaschool.rubisenergies.Constants.baseUrl;
 
+import androidx.annotation.NonNull;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -19,6 +21,7 @@ public class RapidClient {
     public static RapidApi getClient(){
         if(retrofit==null){
             OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
+                @NonNull
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request request= chain.request().newBuilder()
