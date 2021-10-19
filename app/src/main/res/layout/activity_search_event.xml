@@ -24,7 +24,7 @@
         android:layout_marginEnd="101dp"
         android:background="@drawable/input_white_background"
         android:ems="10"
-        android:hint="Input fruit name"
+        android:hint="Input city name"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="@color/black"
@@ -43,7 +43,7 @@
         android:layout_marginEnd="131dp"
         android:textSize="18sp"
         android:layout_marginBottom="33dp"
-        android:text="Input Food/ Fruit Name"
+        android:text="Input Venue Name"
         android:textAlignment="center" />
 
 

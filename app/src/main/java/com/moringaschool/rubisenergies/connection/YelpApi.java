@@ -7,7 +7,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface YelpApi {
-    @GET("events/")
+    @GET("events")
     Call<YelpEventSearchResponse> getRubisEnergies(
-            @Query("location=") String location);
+            @Query("location") String location
+    );
 }

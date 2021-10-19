@@ -22,21 +22,21 @@ public class SearchFood extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_food);
+        setContentView(R.layout.activity_search_event);
         ButterKnife.bind(this);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentReceive=getIntent();
                 String userName=intentReceive.getStringExtra("name");
-                String foodsearch=food_search.getText().toString();
+                String eventSearch=food_search.getText().toString();
 
 
-                if(foodsearch.length()==0){
+                if(eventSearch.length()==0){
                     error.setText("This field cannot be blank");
                 }else {
-                    Intent intent=new Intent(SearchFood.this,AllMeals.class);
-                    intent.putExtra("foodsearch",foodsearch);
+                    Intent intent=new Intent(SearchFood.this, AllEvents.class);
+                    intent.putExtra("eventSearch",eventSearch);
                     startActivity(intent);
 
                 }

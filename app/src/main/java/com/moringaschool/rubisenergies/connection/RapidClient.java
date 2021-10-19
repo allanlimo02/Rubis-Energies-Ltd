@@ -3,6 +3,8 @@ package com.moringaschool.rubisenergies.connection;
 import static com.moringaschool.rubisenergies.Constants.YelpApiKey;
 import static com.moringaschool.rubisenergies.Constants.baseUrl;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import java.io.IOException;
@@ -25,7 +27,7 @@ public class RapidClient {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request request= chain.request().newBuilder()
-                            .addHeader("YelpApiKey",YelpApiKey)
+                            .addHeader("Authorization",YelpApiKey)
                             .build();
                     return chain.proceed(request);
                 }

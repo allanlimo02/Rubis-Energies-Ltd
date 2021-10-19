@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.rubisenergies">
     <!-- Requesting INternet permission -->
-    <uses-permission android:name="android.permission.INTERNET" />
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,7 @@
             android:name=".ui.SearchFood"
             android:exported="true" />
         <activity
-            android:name=".ui.AllMeals"
+            android:name=".ui.AllEvents"
             android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
