@@ -74,7 +74,7 @@ public class AllEvents extends AppCompatActivity {
 //                    for(int i=1;i<eventLocation.length;i++){
 //                        eventLocation[i]=eventsList.get(i).getDescription();
 //                    }
-                    ArrayAdapter arrayAdapter=new ArrayAdapter(AllEvents.this,android.R.layout.simple_list_item_1,event);
+                    EventAdapter arrayAdapter=new EventAdapter(AllEvents.this,android.R.layout.simple_list_item_1,event);
                     allRest.setAdapter(arrayAdapter);
                 }else{
                     showFailureMessage();
