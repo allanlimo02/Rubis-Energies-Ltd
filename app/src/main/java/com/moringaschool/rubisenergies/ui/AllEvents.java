@@ -1,6 +1,8 @@
 package com.moringaschool.rubisenergies.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.moringaschool.rubisenergies.Adapters.ListAdapter;
 import com.moringaschool.rubisenergies.R;
 import com.moringaschool.rubisenergies.connection.YelpApi;
 import com.moringaschool.rubisenergies.connection.RapidClient;
@@ -27,10 +30,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AllEvents extends AppCompatActivity {
-    @BindView(R.id.listView) ListView allRest;
     @BindView(R.id.welcome) TextView mUsername;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar)  ProgressBar mProgressBar;
+    @BindView(R.id.recyclerView)  RecyclerView mRecyclerView;
+
+    private ListAdapter listAdapter;
+    public List<Event> eventListFinal;
 
     private ListView singleRestaurant;
 
@@ -58,24 +64,33 @@ public class AllEvents extends AppCompatActivity {
 //                    }
 //                }
                 if(response.isSuccessful()){
-//                    assert response.body() != null;
-                    List<Event> eventsList=response.body().getEvents();
-//                    Log.d("response","Your response is ListEvents Arrays"+eventsList);
-                    String[]event=new String[eventsList.size()];
-//                    Log.d("Length","Is"+event.length);
-                    String[] eventLocation=new String[eventsList.size()];
-                    String[] siteUrl=new String[eventsList.size()];
-                    for (int i=0;i<event.length;i++){
-                        event[i]=eventsList.get(i).getName();
-                        eventLocation[i]=eventsList.get(i).getCategory();
-                        siteUrl[i]=eventsList.get(i).getEventSiteUrl();
-                    }
 
+                    eventListFinal=response.body().getEvents();
+                    listAdapter=new ListAdapter(AllEvents.this,eventListFinal);
+                    mRecyclerView.setAdapter(listAdapter);
+                    RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(AllEvents.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+                    showEventsList();
+
+
+//                    assert response.body() != null;
+//                    List<Event> eventsList=response.body().getEvents();
+////                    Log.d("response","Your response is ListEvents Arrays"+eventsList);
+//                    String[]event=new String[eventsList.size()];
+////                    Log.d("Length","Is"+event.length);
+//                    String[] eventLocation=new String[eventsList.size()];
+//                    String[] siteUrl=new String[eventsList.size()];
+//                            for (int i=0;i<event.length;i++){
+//                        event[i]=eventsList.get(i).getName();
+//                        eventLocation[i]=eventsList.get(i).getCategory();
+//                        siteUrl[i]=eventsList.get(i).getEventSiteUrl();
 //                    for(int i=1;i<eventLocation.length;i++){
 //                        eventLocation[i]=eventsList.get(i).getDescription();
 //                    }
-                    EventAdapter arrayAdapter=new EventAdapter(AllEvents.this,android.R.layout.simple_list_item_1,event);
-                    allRest.setAdapter(arrayAdapter);
+//                    ArrayAdapter arrayAdapter=new ArrayAdapter(AllEvents.this,android.R.layout.simple_list_item_1,event);
+//                    allRest.setAdapter(arrayAdapter);
+
                 }else{
                     showFailureMessage();
                 }
@@ -91,6 +106,9 @@ public class AllEvents extends AppCompatActivity {
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
         mErrorTextView.setVisibility(View.VISIBLE);
+    }
+    private void showEventsList(){
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
     private void showUnsuccessfulMessage() {
         mErrorTextView.setText("Something went wrong. Please try again later");
