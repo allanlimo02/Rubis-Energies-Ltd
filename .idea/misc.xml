@@ -8,11 +8,16 @@
         <entry key="app/src/main/res/layout/activity_all_events.xml" value="0.290625" />
         <entry key="app/src/main/res/layout/activity_all_meals.xml" value="0.3229166666666667" />
         <entry key="app/src/main/res/layout/activity_all_restaurants.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/activity_event.xml" value="0.3203125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27488151658767773" />
         <entry key="app/src/main/res/layout/activity_restaurants_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_search_event.xml" value="0.2911458333333333" />
         <entry key="app/src/main/res/layout/activity_search_food.xml" value="0.3229166666666667" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/event_list_item.xml" value="0.2911458333333333" />
+        <entry key="app/src/main/res/layout/fragment_event_view.xml" value="0.2911458333333333" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.30520833333333336" />
+        <entry key="app/src/main/res/layout/pop_up_trial.xml" value="0.2911458333333333" />
       </map>
     </option>
   </component>
