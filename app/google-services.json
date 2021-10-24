@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1026132392383",
+    "project_id": "eventapp-d1676",
+    "storage_bucket": "eventapp-d1676.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026132392383:android:acf2df29e34ef26061890a",
+        "android_client_info": {
+          "package_name": "com.moringaschool.rubisenergies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026132392383-65apbhfc4u3ovdif2h1l2sjrbt1tbea9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvKJ6duoQBWV46VjaZHooqrDAjH02A1QI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026132392383-65apbhfc4u3ovdif2h1l2sjrbt1tbea9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
