@@ -4,63 +4,113 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:text="How are you feeling today?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/MoodLabel"
-        android:textColor="@color/black"
-        android:typeface="monospace"
-        android:textStyle="normal|bold"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:padding="10dp"
-        android:gravity="center_horizontal" />
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
+        android:background="@color/white">
 
-        <RadioGroup
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/eventImageView"
+            android:src="@drawable/events"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/moodRadioGroup"
-            android:padding="10dp">
+            android:background="@android:color/white"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp">
 
-            <RadioButton
-                android:text="Great"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioButton1"
-                android:layout_weight="1" />
-            <RadioButton
-                android:text="Good"
+                android:text="Event Name"
+                android:id="@+id/eventName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioButton2"
-                android:layout_weight="1" />
-            <RadioButton
-                android:text="Okay"
+                android:text="Attended"
+                android:id="@+id/ratingTextView"
+                android:layout_alignTop="@+id/eventName"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:id="@+id/radioButton3"
-                android:layout_weight="1" />
-            <RadioButton
-                android:text="Meh"
-                android:layout_width="wrap_content"
+                android:text="Location"
+                android:id="@+id/cuisineTextView"
+                android:layout_below="@+id/eventName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/black"
+                android:textStyle="italic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioButton4"
-                android:layout_weight="1" />
-            <RadioButton
-                android:text="Sad"
-                android:layout_width="wrap_content"
+                android:layout_above="@+id/saveEvent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingTop="20dp"
+                android:paddingRight="30dp">
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="View on Yelp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="url"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/saveEvent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/radioButton5"
-                android:layout_weight="1" />
-        </RadioGroup>
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="248dp"
+                android:text="Mark as Interested"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
     </LinearLayout>
 </FrameLayout>
