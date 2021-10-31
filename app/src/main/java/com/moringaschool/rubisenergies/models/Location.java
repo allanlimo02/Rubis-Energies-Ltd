@@ -1,12 +1,18 @@
 
 package com.moringaschool.rubisenergies.models;
 
+import androidx.annotation.NonNull;
+
 import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 @Generated("jsonschema2pojo")
+
 public class Location {
 
     @SerializedName("address1")
@@ -167,5 +173,10 @@ public class Location {
         Location rhs = ((Location) other);
         return ((((((((((this.zipCode == rhs.zipCode)||((this.zipCode!= null)&&this.zipCode.equals(rhs.zipCode)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.address3 == rhs.address3)||((this.address3 != null)&&this.address3 .equals(rhs.address3))))&&((this.crossStreets == rhs.crossStreets)||((this.crossStreets!= null)&&this.crossStreets.equals(rhs.crossStreets))))&&((this.address2 == rhs.address2)||((this.address2 != null)&&this.address2 .equals(rhs.address2))))&&((this.city == rhs.city)||((this.city!= null)&&this.city.equals(rhs.city))))&&((this.address1 == rhs.address1)||((this.address1 != null)&&this.address1 .equals(rhs.address1))))&&((this.displayAddress == rhs.displayAddress)||((this.displayAddress!= null)&&this.displayAddress.equals(rhs.displayAddress))))&&((this.state == rhs.state)||((this.state!= null)&&this.state.equals(rhs.state))));
     }
+//    @NonNull
+//    @Override
+//    public String toString() {
+//        return String.format("%s, %s, %s %s", this.address1, this.city, this.state, this.zipCode);
+//    }
 
 }
