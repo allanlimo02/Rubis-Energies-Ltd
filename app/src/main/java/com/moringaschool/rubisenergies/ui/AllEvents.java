@@ -1,12 +1,15 @@
 package com.moringaschool.rubisenergies.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaRouter;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -28,6 +31,8 @@ import com.moringaschool.rubisenergies.models.Event;
 import com.moringaschool.rubisenergies.models.YelpEventSearchResponse;
 
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -87,7 +92,31 @@ public class AllEvents extends AppCompatActivity {
                     showUnsuccessfulMessage();
                 }
             });
+
+            ItemTouchHelper itemTouchHelper=new ItemTouchHelper(simpleCallback);
+            itemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
+    //Drag & drop methods come here
+    ItemTouchHelper.SimpleCallback simpleCallback= new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN |ItemTouchHelper.START|ItemTouchHelper.END,0) {
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+
+            int fromPosition=viewHolder.getAdapterPosition();
+            int toPosition=target.getAbsoluteAdapterPosition();
+            Collections.swap(eventListFinal,fromPosition,toPosition);
+
+            recyclerView.getAdapter().notifyItemMoved(fromPosition,toPosition);
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+        }
+    };
+
+    // End of
     public void getEvent(String location){
         YelpApi client = RapidClient.getClient();
         Call<YelpEventSearchResponse> call=client.getRubisEnergies(location);
@@ -139,10 +168,3 @@ public class AllEvents extends AppCompatActivity {
     }
 
 }
-
-//Grace Umutesi10:02 AM
-//mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-//        if(mRecentAddress != null){
-//            fetchRestaurants(mRecentAddress);
-//        }
