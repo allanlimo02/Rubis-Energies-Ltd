@@ -124,13 +124,7 @@ public class AllEvents extends AppCompatActivity {
             @Override
             public void onResponse(Call<YelpEventSearchResponse> call, Response<YelpEventSearchResponse> response) {
                 hideProgressBar();
-//                if(response.code()==400){
-//                    try {
-//                        Log.d("response","Your response is events"+response.errorBody().string());
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
+//
                 if(response.isSuccessful()){
                     eventListFinal=response.body().getEvents();
                     listAdapter=new ListAdapter(AllEvents.this,eventListFinal);
