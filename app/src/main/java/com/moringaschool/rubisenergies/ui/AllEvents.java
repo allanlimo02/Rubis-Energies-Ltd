@@ -55,6 +55,7 @@ public class AllEvents extends AppCompatActivity {
     private String recentSearch;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,8 +97,11 @@ public class AllEvents extends AppCompatActivity {
             ItemTouchHelper itemTouchHelper=new ItemTouchHelper(simpleCallback);
             itemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
+    String deletedEvent=null;
+
     //Drag & drop methods come here
-    ItemTouchHelper.SimpleCallback simpleCallback= new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN |ItemTouchHelper.START|ItemTouchHelper.END,0) {
+    ItemTouchHelper.SimpleCallback simpleCallback= new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN |ItemTouchHelper.START|ItemTouchHelper.END,
+            ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
 
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -112,6 +116,18 @@ public class AllEvents extends AppCompatActivity {
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            int position=viewHolder.getPosition();
+            if(direction==ItemTouchHelper.LEFT){
+                eventListFinal.remove(position);
+                deletedEvent= String.valueOf(eventListFinal.get(position));
+                listAdapter.notifyItemRemoved(position);
+//                recyclerView.getAdapter().
+
+
+            }
+            if(direction==ItemTouchHelper.RIGHT){
+                eventListFinal.remove(position);
+            }
 
         }
     };

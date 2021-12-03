@@ -76,7 +76,6 @@ public class EventViewFragment extends Fragment {
 
     @BindView(R.id.eventImageView)ImageView eventImageView;
     @BindView(R.id.eventName) TextView eventName;
-    @BindView(R.id.date) TextView date;
     @BindView(R.id.category) TextView category;
     @BindView(R.id.url) TextView url;
 

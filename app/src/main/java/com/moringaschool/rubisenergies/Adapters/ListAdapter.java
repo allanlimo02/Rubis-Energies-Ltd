@@ -56,8 +56,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.eventViewAdapt
         @BindView(R.id.url) TextView url;
 
         private Context mContext;
+    private int mOrientation;
 
-        public eventViewAdapter( View itemView) {
+
+    public eventViewAdapter( View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             mContext=itemView.getContext();
