@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style name="MyTheme"  parent="your parent theme">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+</style>
