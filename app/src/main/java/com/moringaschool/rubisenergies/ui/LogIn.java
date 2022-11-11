@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,6 +34,9 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_log_in);
         ButterKnife.bind(this);
 
@@ -60,20 +65,38 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
         if (password.equals("")) {
             mPasswordEditText.setError("Password cannot be blank");
         }else{
-            mAuth.signInWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                Intent intent=new Intent(LogIn.this,SearchEvent.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                            }
-                            else {
-                                Toast.makeText(LogIn.this,"Wrong credentials",Toast.LENGTH_LONG).show();
-                                }
-                        }
-                    });
+            Intent intent=new Intent(LogIn.this,SearchEvent.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+//            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<AuthResult> task) {
+//                    if (task.isComplete()){
+//                        Intent intent=new Intent(LogIn.this,SearchEvent.class);
+//                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                startActivity(intent);
+//                    }
+//                    else {
+//                        Toast.makeText(LogIn.this, "Check credentials and try again", Toast.LENGTH_LONG).show();
+//                    }
+//
+//                }
+//            });
+
+//            mAuth.signInWithEmailAndPassword(email,password)
+//                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            if(task.isSuccessful()){
+//                                Intent intent=new Intent(LogIn.this,SearchEvent.class);
+//                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                startActivity(intent);
+//                            }
+//                            else {
+//                                Toast.makeText(LogIn.this,"Wrong credentials",Toast.LENGTH_LONG).show();
+//                                }
+//                        }
+//                    });
         }
 
 
