@@ -93,18 +93,17 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
         boolean validEmail = isValidEmail(email);
         boolean validName = isValidName(name);
         boolean validPassword = isValidPassword(password, confirmPassword);
-        if (!validEmail || !validName || !validPassword) return;
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "Authentication successful");
-                    } else {
-                        Toast.makeText(UserRegistration.this, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
-        //
+//        if (!validEmail || !validName || !validPassword) return;
+//            mAuth.createUserWithEmailAndPassword(email, password)
+//                    .addOnCompleteListener(this, task -> {
+//                        if (task.isSuccessful()) {
+//                        Log.d(TAG, "Authentication successful");
+//                    } else {
+//                        Toast.makeText(UserRegistration.this, "Authentication failed.",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//        //
         if (!validEmail || !validName || !validPassword) return;
         showProgressBar();
 
